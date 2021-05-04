@@ -217,7 +217,7 @@ def mask_to_bboxes(mask, image_shape=None, min_area=None,
 
     for bbox_idx in range(1, max_bbox_idx + 1):
         bbox_mask = mask == bbox_idx
-        _, cnts, _ = cv2.findContours(bbox_mask.astype(np.uint8), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        cnts, _ = cv2.findContours(bbox_mask.astype(np.uint8), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         if len(cnts) == 0:
             continue
         cnt = cnts[0]
