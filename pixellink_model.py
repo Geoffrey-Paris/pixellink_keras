@@ -8,7 +8,7 @@ import os
 import numpy as np
 from keras import layers
 from keras.engine.topology import get_source_inputs
-from keras.applications.imagenet_utils import _obtain_input_shape
+from keras_applications.imagenet_utils import _obtain_input_shape
 from keras import backend
 import keras.backend as K
 from keras.layers import Conv2D, Add, Lambda
