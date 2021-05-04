@@ -12,7 +12,6 @@ import imutils
 from pixellink_model import create_pixellink_model
 from pixellink_utils import *
 
-%matplotlib inline
 import matplotlib.pyplot as plt
 
 r_mean = 123.
