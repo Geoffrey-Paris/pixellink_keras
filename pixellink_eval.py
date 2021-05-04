@@ -7,10 +7,13 @@
 import os
 import numpy as np
 import cv2
-os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import imutils
 from pixellink_model import create_pixellink_model
 from pixellink_utils import *
+
+%matplotlib inline
+import matplotlib.pyplot as plt
 
 r_mean = 123.
 g_mean = 117.
@@ -47,9 +50,10 @@ for box in bboxes:
     cv2.line(image_c,tuple(points[1]),tuple(points[2]),(0,0,255),2)
     cv2.line(image_c,tuple(points[2]),tuple(points[3]),(0,0,255),2)
 
+plt.imshow(image_c)
 
-cv2.imshow('image', image_c)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.imshow('image', image_c)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
 
 cv2.imwrite('img_1099_res.jpg', image_c)
