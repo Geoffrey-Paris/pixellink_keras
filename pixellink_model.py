@@ -15,10 +15,11 @@ from keras.layers import Conv2D, Add, Lambda
 from functools import partial
 from keras.models import Model
 import tensorflow as tf
+from tensorflow.compat.v1.image import resize_bilinear
 
 
 def upsample(x):
-    return tf.image.resize_bilinear(x, size=[K.shape(x)[1]*2, K.shape(x)[2]*2])
+    return resize_bilinear(x, size=[K.shape(x)[1]*2, K.shape(x)[2]*2])
 
 
 def _generate_layer_name(name, prefix=None):
