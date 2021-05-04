@@ -7,7 +7,7 @@
 import os
 import numpy as np
 import cv2
-os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 import imutils
 from pixellink_model import create_pixellink_model
 from pixellink_utils import *
