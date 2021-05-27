@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
 
     # img_path = r'./samples/img_1099.jpg'
-    img_path = r'./dataset/MyDrive/dataset/train/102593-1.png'
+    # img_path = r'./dataset/MyDrive/dataset/train/102593-1.png'
+    img_path = r'./samples/101622-1.jpg'
     save_weights = r'./weights/pixellink.h5'
     model = create_pixellink_model(acf='relu')
     model.load_weights(save_weights)

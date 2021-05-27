@@ -6,14 +6,14 @@
 #'''
 import os
 import numpy as np
-from keras import layers
-from keras.engine.topology import get_source_inputs
+from tensorflow.keras import layers
+# from tensorflow.python.keras.engine.topology import get_source_inputs
 from keras_applications.imagenet_utils import _obtain_input_shape
-from keras import backend
-import keras.backend as K
-from keras.layers import Conv2D, Add, Lambda
+from tensorflow.keras import backend
+import tensorflow.keras.backend as K
+from tensorflow.keras.layers import Conv2D, Add, Lambda
 from functools import partial
-from keras.models import Model
+from tensorflow.keras.models import Model
 import tensorflow as tf
 from tensorflow.compat.v1.image import resize_bilinear
 
@@ -131,10 +131,12 @@ def pixellink_vgg16(weights='imagenet',
 
         # Ensure that the model takes into account
         # any potential predecessors of `input_tensor`.
-        if input_tensor is not None:
-            inputs = get_source_inputs(input_tensor)
-        else:
-            inputs = img_input
+        # if input_tensor is not None:
+        #     inputs = get_source_inputs(input_tensor)
+        # else:
+        #     inputs = img_input
+        inputs = img_input
+
         # Create model.
         model = Model(inputs, x, name='pixellink_vgg16')
 

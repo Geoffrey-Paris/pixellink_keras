@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 
 
-def resize_image(im, max_side_len=2400):
+def resize_image(im, max_side_len=1200):
     '''
     resize image to a size multiple of 32 which is required by the network
     :param im: the resized image
